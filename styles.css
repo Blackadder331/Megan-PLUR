@@ -1,0 +1,396 @@
+@font-face {
+    font-family: "Supply";
+    src: url(./fonts/Supply-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Supply Bold";
+    src: url(./fonts/Supply-Bold.ttf);
+}
+.container {
+    /* position: fixed; */
+    margin-top: 10rem;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.rotate {
+    animation: spin 4s infinite;
+    scale: 2;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+
+:root {
+    --bg-color: hsl(0, 0%, 100%);
+    --typewriterSpeed: 6s;
+    --typewriterCharacters: 24;
+}
+  
+body {
+    margin: 0;
+    font-family: "Supply", sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: var(--bg-color);
+    color: #0d0d0d;;
+}
+  
+h1 {
+font-size: clamp(1rem, 3vw + 1rem, 4rem);
+position: relative;
+position: relative;
+width: -webkit-max-content;
+width: -moz-max-content;
+width: max-content;
+}
+
+h1::before,
+h1::after {
+content: "";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+h1::before {
+background: var(--bg-color);
+height: 5rem;
+-webkit-animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+        animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+width: 0.125em;
+background: #0d0d0d;
+-webkit-animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+        animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards, blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+color: rgba(0, 0, 0, 0.7);
+font-size: 2rem;
+font-weight: 400;
+opacity: 0;
+transform: translateY(3rem);
+-webkit-animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1.5s) forwards;
+        animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1.5s) forwards;
+
+margin-top: 0;
+padding-top: 0;
+}
+
+
+@-webkit-keyframes typewriter {
+to {
+    left: 100%;
+}
+}
+
+@keyframes typewriter {
+to {
+    left: 100%;
+}
+}
+@-webkit-keyframes blink {
+to {
+    background: transparent;
+}
+}
+@keyframes blink {
+to {
+    background: transparent;
+}
+}
+@-webkit-keyframes fadeInUp {
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+@keyframes fadeInUp {
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+li {
+margin-bottom: 10px;
+}
+
+li:before {
+    content: "+";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.patch-content {
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: flex-start;
+    align-items: flex-start;
+    height: 40%;
+    text-align: left;
+    justify-content: space-around;
+    width: 70vw;
+    animation: fadeInUp .5s ease-in forwards 8s;
+    opacity: 0;
+    margin-bottom: 10rem;
+}
+
+.left, .right {
+    width: 40%;
+}
+
+.left p {
+    font-size: 1rem;
+}
+
+.right li {
+    font-size: .8rem;
+}
+
+strong {
+    font-family: "Supply Bold";
+}
+h2 {
+    padding-top: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 1.33rem;
+}
+
+p{
+    line-height: 1.5;
+}
+
+.update {
+    margin-left: -.5rem;
+}
+
+.cta-button {
+    font-family: "Supply Bold";
+    display: inline-block;
+    padding: 1.5rem 3rem;
+
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #0d0d0d;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 5rem 0 10rem;
+    outline: none;
+    border: none;
+    transform: translateY(2rem);
+    animation: fadeInUp 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 10s forwards;
+    opacity: 0;
+}
+
+/* .cta-button span {
+    padding: 0 -.25rem;
+    margin: 0 -.25rem;;
+} */
+
+.space {
+    content: " ";
+    width: 2rem;
+    padding: .5rem;
+}
+.cta-button:hover .letter-r {
+color: rgb(18, 255, 1);
+}
+
+.cta-button:hover .letter-o {
+color: rgb(255, 80, 240);
+}
+
+.cta-button:hover .letter-y {
+color: #fec304;
+}
+
+.cta-button:hover .letter-g {
+color: #00fff7;
+}
+
+.cta-button:hover .letter-b {
+color: rgb(251, 50, 134);
+}
+
+.cta-button:hover .letter-i {
+color: rgb(18, 251, 255);
+}
+
+.cta-button:hover .letter-v {
+color: violet;
+}
+
+.cta-button:hover {
+    background-color: #000000;
+    scale: 1.10;
+    cursor: pointer;
+}
+  
+a, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+.P {
+    color: rgb(18, 255, 1);
+}
+
+.L {
+    color: violet;
+}
+
+.U {
+    color: #fec304;
+}
+
+.R {
+    color: rgb(18, 251, 255);
+}
+
+@media screen and (max-width: 1000px) {
+    .patch-content {
+        padding-top: 20vh;
+        flex-direction: column;
+        gap: 3rem;
+        width: 80vw;
+    }
+    
+    .left, .right {
+        width: 100%;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.15rem;
+    }
+    .subtitle {
+        font-size: 1.15rem;
+        margin-bottom: 5rem;
+    }
+    .container {
+    margin-top: 5rem;
+    }
+
+    .cta-button {
+        margin-top: 8rem;
+    }
+}
+.black {
+    background-color: #0d0d0d;
+}
+/* //rave */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: flash 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+.bg-svg:nth-child(1) {
+animation-delay: 0s;
+}
+
+.bg-svg:nth-child(2) {
+animation-delay: 1s;
+}
+
+.bg-svg:nth-child(3) {
+animation-delay: 2s;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    animation: show-image 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.75s forwards;
+    opacity: 0;
+    z-index: -1; /* move the image behind the SVGs */
+    background-position: top center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.bg-svg {
+mix-blend-mode: lighten;
+}
+
+@keyframes flash {
+0% {
+    opacity: 0;
+}
+1% {
+    opacity: .95;
+}
+20% {
+    opacity: 0;
+}
+100% {
+    opacity: 0;
+}
+}
+
+@keyframes show-image {
+0% {
+    opacity: 0;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
